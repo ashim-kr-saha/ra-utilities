@@ -1,0 +1,41 @@
+{
+  "name": "ra-utilities",
+  "version": "0.1.0",
+  "description": "Utility components for react-admin",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashim-k-saha/ra-utilities.git"
+  },
+  "keywords": [
+    "react-admin"
+  ],
+  "author": "Ashim Saha",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ashim-k-saha/ra-utilities/issues"
+  },
+  "homepage": "https://github.com/ashim-k-saha/ra-utilities#readme",
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "prop-types": "^15.6.2",
+    "ra-core": "^2.1.2",
+    "react": "~16.3.0",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux-form": "^7.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}

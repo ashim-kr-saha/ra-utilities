@@ -1,3 +1,1 @@
-import ReferenceArrayInputSetter from './ReferenceArrayInputSetter';
-
-export default ReferenceArrayInputSetter;
+export ReferenceArrayInputSetter from './ReferenceArrayInputSetter';

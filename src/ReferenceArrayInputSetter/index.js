@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { GET_LIST } from 'ra-core';
 import { getFormValues, arrayPush, arrayRemoveAll } from 'redux-form';
-import isEqual from 'lodash.isEqual';
+import isEqual from 'lodash.isequal';
 const REDUX_FORM_NAME = 'record-form';
 
 class ReferenceArrayInputSetter extends Component {

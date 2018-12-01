@@ -1,6 +1,6 @@
 {
   "name": "ra-utilities",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Utility components for react-admin",
   "main": "lib/index",
   "directories": {
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",

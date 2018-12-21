@@ -3,6 +3,15 @@ import { Link } from 'react-admin';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
+/**
+ * fieldsMap = {
+ *    purchase_id: id,
+ *    items: items,
+ *    purchase_invoice_no: invoice_no
+ * }
+ * @param {fieldsMap} fieldsMap
+ */
+
 const CreateRelatedResourceButton = ({ actionName, record, newResource, fieldsMap, condition, visible }) => {
   var fields = Object.keys(fieldsMap);
   var newRecord = {};

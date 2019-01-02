@@ -15,17 +15,10 @@ import PropTypes from 'prop-types';
 const CreateRelatedResourceButton = ({ actionName, record, newResource, fieldsMap, condition, isVisible, conditionChecker }) => {
   var fields = Object.keys(fieldsMap);
   var newRecord = {};
-  for(var i = 0; i < fields.length; i++) {
-    var field = fields[i];
-    newRecord[field] = record[fields[field]];
-  }
-
-  var disabled = true;
-  if(condition instanceof Object) {
-    var keys = Object.keys(condition);
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      disabled = disabled && (record[key] === condition[key]);
+  if(record) {
+    for(var i = 0; i < fields.length; i++) {
+      var field = fields[i];
+      newRecord[field] = record[fieldsMap[field]];
     }
   }
 
@@ -46,7 +39,7 @@ const CreateRelatedResourceButton = ({ actionName, record, newResource, fieldsMa
           pathname: `/${newResource}/create`,
           state: { record: newRecord },
         }}
-        disabled={disabled}
+        color="primary"
       >
         {actionName}
       </Button>

@@ -99,7 +99,14 @@ class Menu extends React.Component {
 
   handleClick(m) {
     var state = this.state;
-    state[m] = !state[m];
+    var current = !state[m];
+    var keys = Object.keys(state);
+    // make all false
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      state[key] = false;
+    }
+    state[m] = current;
     this.setState(state);
   }
 

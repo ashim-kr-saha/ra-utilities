@@ -39,15 +39,20 @@ function isVisible(pageType, permission, name, element) {
     default:
       type = '';
   }
-  if (
-    !permission ||
-    !permission[name] ||
-    !permission[name][type] ||
-    permission[name][type].startsWith('no')
-  ) {
+  
+  if(permission === undefined || permission === null) {
+    return element;
+  }
+  if(permission[name] === undefined || permission[name] === null) {
+    return element;
+  }
+  if(permission[name][type] === undefined || permission[name][type] === null) {
+    return element;
+  }
+  if(permission[name][type].startsWith('no')) {
     return null;
   } else {
-    return element;
+    return element
   }
 }
 

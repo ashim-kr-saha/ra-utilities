@@ -1,5 +1,6 @@
 import FileUpload from './FileUpload';
 import ReferenceArrayInputSetter from './ReferenceArrayInputSetter';
+import ReferenceValueSetter from './ReferenceValueSetter';
 import DynamicLabelBooleanInput from './DynamicLabelBooleanInput';
 import Menu from './Menu';
 import CreateRelatedResourceButton from './CreateRelatedResourceButton';
@@ -17,6 +18,7 @@ import {
 export {
   FileUpload,
   ReferenceArrayInputSetter,
+  ReferenceValueSetter,
   DynamicLabelBooleanInput,
   Menu,
   CreateRelatedResourceButton,

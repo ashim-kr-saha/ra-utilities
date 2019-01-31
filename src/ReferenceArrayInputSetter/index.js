@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { GET_LIST } from 'ra-core';
+import { GET_LIST, fetchEnd, fetchStart } from 'ra-core';
 import { getFormValues, arrayPush, arrayRemoveAll } from 'redux-form';
 import isEqual from 'lodash.isequal';
 const REDUX_FORM_NAME = 'record-form';
@@ -68,6 +68,7 @@ class ReferenceArrayInputSetter extends Component {
 
     const params = { pagination: { page: 1, perPage }, sort, filter };
 
+    fetchStart();
     if (reference && filter) {
       dataProvider(GET_LIST, reference, params)
         .then(json => {
@@ -82,7 +83,8 @@ class ReferenceArrayInputSetter extends Component {
         })
         .catch(e => {
           arrayRemoveAll(REDUX_FORM_NAME, source);
-        });
+        })
+        .finally(fetchEnd);;
     }
   }
 

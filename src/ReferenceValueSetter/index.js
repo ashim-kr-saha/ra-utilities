@@ -4,6 +4,15 @@ import PropTypes from 'prop-types';
 import { GET_ONE, fetchEnd, fetchStart } from 'ra-core';
 import { getFormValues, change } from 'redux-form';
 const REDUX_FORM_NAME = 'record-form';
+import get from 'lodash.get';
+
+
+function getActualPath(source, id) {
+  var x = source.split(".");
+  var length = x.length;
+  x[length-1] = id;
+  return x.join(".");
+}
 
 export class ReferenceValueSetter extends Component {
   componentDidMount() {
@@ -12,7 +21,7 @@ export class ReferenceValueSetter extends Component {
 
   componentDidUpdate(prevProps) {
 
-    const refId = this.props.formData[this.props.ref_id];
+    const refId = get(this.props.formData, getActualPath(this.props.source, this.props.ref_id));
 
     if (this.lastRefId !== refId) {
       this.lastRefId = refId
@@ -32,10 +41,12 @@ export class ReferenceValueSetter extends Component {
       dataProvider,
       formData
     } = props;
-
+    if(this.props === undefined) {
+      return
+    }
     const reference = this.props.reference;
     const ref_source =  this.props.ref_source;
-    const ref_id = formData[this.props.ref_id];
+    const ref_id = get(formData, getActualPath(source, this.props.ref_id));
     
     fetchStart();
     if (ref_id) {

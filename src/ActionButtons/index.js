@@ -64,14 +64,14 @@ const mapStateToProps = state => {
 
 export class aEditButton extends Component {
   render() {
-    const { record, basePath, resource, resources, permissions } = this.props;
+    const { record, basePath, resource, resources, permissions, ...rest } = this.props;
 
     if (resources[resource].props.hasEdit) {
       return isVisible(
         EDIT,
         permissions,
         resource,
-        <Edit record={record} basePath={basePath} resource={resource} />
+        <Edit record={record} basePath={basePath} resource={resource} {...rest} />
       );
     } else {
       return null;
@@ -90,14 +90,14 @@ export const EditButton = connect(mapStateToProps)(aEditButton);
 
 class aShowButton extends Component {
   render() {
-    const { record, basePath, resource, resources, permissions } = this.props;
+    const { record, basePath, resource, resources, permissions, ...rest } = this.props;
 
     if (resources[resource].props.hasShow) {
       return isVisible(
         SHOW,
         permissions,
         resource,
-        <Show record={record} basePath={basePath} resource={resource} />
+        <Show record={record} basePath={basePath} resource={resource} {...rest} />
       );
     } else {
       return null;
@@ -116,14 +116,14 @@ export const ShowButton = connect(mapStateToProps)(aShowButton);
 
 class aCreateButton extends Component {
   render() {
-    const { record, basePath, resource, resources, permissions } = this.props;
+    const { record, basePath, resource, resources, permissions, ...rest } = this.props;
 
     if (resources[resource].props.hasCreate) {
       return isVisible(
         CREATE,
         permissions,
         resource,
-        <Create record={record} basePath={basePath} resource={resource} />
+        <Create record={record} basePath={basePath} resource={resource} {...rest} />
       );
     } else {
       return null;
@@ -141,14 +141,14 @@ export const CreateButton = connect(mapStateToProps)(aCreateButton);
 
 class aListButton extends Component {
   render() {
-    const { record, basePath, resource, resources, permissions } = this.props;
+    const { record, basePath, resource, resources, permissions, ...rest } = this.props;
 
     if (resources[resource].props.hasList) {
       return isVisible(
         LIST,
         permissions,
         resource,
-        <List record={record} basePath={basePath} resource={resource} />
+        <List record={record} basePath={basePath} resource={resource} {...rest} />
       );
     } else {
       return null;
@@ -166,14 +166,14 @@ export const ListButton = connect(mapStateToProps)(aListButton);
 
 export class aExportButton extends Component {
   render() {
-    const { record, basePath, resource, resources, permissions } = this.props;
+    const { record, basePath, resource, resources, permissions, ...rest } = this.props;
 
     if (resources[resource].props.hasList) {
       return isVisible(
         EXPORT,
         permissions,
         resource,
-        <Export record={record} basePath={basePath} resource={resource} />
+        <Export record={record} basePath={basePath} resource={resource} {...rest} />
       );
     } else {
       return null;

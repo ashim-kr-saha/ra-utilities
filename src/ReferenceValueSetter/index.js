@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { GET_ONE, fetchEnd, fetchStart } from 'ra-core';
 import { getFormValues, change } from 'redux-form';
 const REDUX_FORM_NAME = 'record-form';
-import get from 'lodash.get';
+import get from 'lodash/get';
 
 
 function getActualPath(source, id) {

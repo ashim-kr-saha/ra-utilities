@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/ashim-k-saha/ra-utilities#readme",
   "dependencies": {
-    "lodash.isequal": "~4.5.0",
-    "lodash.get": "~4.4.2"
+    "lodash": "4.17.11"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

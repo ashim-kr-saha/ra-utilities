@@ -14,6 +14,7 @@ import {
   EditActions,
   ListActions
 } from './ActionButtons';
+import createExporter from './createExporter';
 
 export {
   FileUpload,
@@ -29,5 +30,6 @@ export {
   ExportButton,
   ShowActions,
   EditActions,
-  ListActions
+  ListActions,
+  createExporter
 }

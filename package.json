@@ -1,6 +1,6 @@
 {
   "name": "ra-utilities",
-  "version": "0.1.19",
+  "version": "0.1.21",
   "description": "Utility components for react-admin",
   "main": "lib/index",
   "directories": {
@@ -41,6 +41,8 @@
     "redux-form": "^7.4.2",
     "prop-types": "^15.6.0",
     "react-admin": "^2.2.0",
-    "@material-ui/icons": "^2.0.0"
+    "@material-ui/icons": "^2.0.0",
+    "papaparse": "^4.6.3",
+    "inflection": "^1.12.0"
   }
 }

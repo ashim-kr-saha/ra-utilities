@@ -64,7 +64,7 @@ export class FileUpload extends Component {
 
   getNewFormData = file => {
     var data = new FormData();
-    data.append(file.src, file.rawFile, file.title);
+    data.append("file", file.rawFile, file.title);
     return data;
   };
 
@@ -103,7 +103,9 @@ export class FileUpload extends Component {
   startUploading = async apiEndpoint => {
     if (!this.uploading) {
       this.uploading = true;
-      this.props.onUploadingStarted();
+      if(typeof this.props.onUploadingStarted === "function") {
+        this.props.onUploadingStarted();
+      }
       if (this.filesToUpload.length === 0) {
         await this.updateReduxForm();
       }
@@ -132,10 +134,13 @@ export class FileUpload extends Component {
           }
         }
       }
-      this.props.onUploadingCompleted();
+      if(typeof this.props.onUploadingCompleted === "function") {
+        this.props.onUploadingCompleted();
+      }
       this.uploading = false;
     }
   };
+
   onChange = async files => {
     const { apiEndpoint } = this.props;
 
@@ -148,7 +153,7 @@ export class FileUpload extends Component {
 
   render() {
     const { fileProps, apiEndpoint, ...rest } = this.props;
-    rest.input.onChange = this.onChange;
+    rest.input.onBlur = this.onChange;
     if (!fileProps.srcPrefix) {
       fileProps.srcPrefix = apiEndpoint + '/files/';
     }

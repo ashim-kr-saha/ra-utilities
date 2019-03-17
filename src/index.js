@@ -1,4 +1,5 @@
 import FileUpload from './FileUpload';
+import DynamicFileField from './DynamicFileField';
 import ReferenceArrayInputSetter from './ReferenceArrayInputSetter';
 import ReferenceValueSetter from './ReferenceValueSetter';
 import DynamicLabelBooleanInput from './DynamicLabelBooleanInput';
@@ -18,6 +19,7 @@ import createExporter from './createExporter';
 
 export {
   FileUpload,
+  DynamicFileField,
   ReferenceArrayInputSetter,
   ReferenceValueSetter,
   DynamicLabelBooleanInput,

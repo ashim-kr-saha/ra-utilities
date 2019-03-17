@@ -3,7 +3,27 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
-import sanitizeRestProps from './sanitizeRestProps';
+
+const sanitizeRestProps = ({
+  addLabel,
+  allowEmpty,
+  basePath,
+  cellClassName,
+  className,
+  formClassName,
+  headerClassName,
+  label,
+  linkType,
+  locale,
+  record,
+  resource,
+  sortable,
+  sortBy,
+  source,
+  textAlign,
+  translateChoice,
+  ...rest
+}) => rest;
 
 const styles = createStyles({
     root: { display: 'inline-block' },

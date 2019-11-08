@@ -5,6 +5,7 @@ import ReferenceValueSetter from './ReferenceValueSetter';
 import DynamicLabelBooleanInput from './DynamicLabelBooleanInput';
 import Menu from './Menu';
 import CreateRelatedResourceButton from './CreateRelatedResourceButton';
+import ReferenceLinkField from './ReferenceLinkField';
 import {
   EditButton,
   ShowButton,
@@ -25,6 +26,7 @@ export {
   DynamicLabelBooleanInput,
   Menu,
   CreateRelatedResourceButton,
+  ReferenceLinkField,
   EditButton,
   ShowButton,
   CreateButton,

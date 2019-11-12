@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 
-import Link from 'ra-core';
+import get from 'lodash/get';
+import { Link } from 'ra-ui-materialui';
 import omit from 'lodash/omit';
 
 function sanitizeRestProps(props) {
@@ -46,13 +47,17 @@ export const ReferenceLinkField = ({
   record,
   reference,
   source,
+  linkType,
   translateChoice = false,
   ...rest
 }) => {
   if (React.Children.count(children) !== 1) {
     throw new Error('<ReferenceLinkField> only accepts a single child');
   }
-  const referenceRecord = get(record, source);
+  const referenceRecord = get(record, `linked_${source}`);
+  if (!referenceRecord) {
+    return null
+  }
   var id = "";
   if (referenceRecord.id) {
     id = referenceRecord.id;
@@ -60,7 +65,7 @@ export const ReferenceLinkField = ({
     id = referenceRecord.uid;
   }
 
-  var resourceLinkPath = `${basePath}/${reference}/${encodeURIComponent(id)}`;
+  var resourceLinkPath = `${reference}/${encodeURIComponent(id)}`;
 
   if (linkType === 'show') {
     resourceLinkPath = `${resourceLinkPath}/show`;
@@ -102,13 +107,9 @@ ReferenceLinkField.propTypes = {
   translateChoice: PropTypes.bool,
 };
 
-const EnhancedReferenceLinkField = withStyles(styles)(ReferenceLinkField);
-
-EnhancedReferenceLinkField.defaultProps = {
+ReferenceLinkField.defaultProps = {
   addLabel: true,
   linkType: 'show',
 };
 
-EnhancedReferenceLinkField.displayName = 'EnhancedReferenceLinkField';
-
-export default EnhancedReferenceLinkField;
+export default withStyles(styles)(ReferenceLinkField);

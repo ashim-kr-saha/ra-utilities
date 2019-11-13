@@ -65,7 +65,7 @@ export const ReferenceLinkField = ({
     id = referenceRecord.uid;
   }
 
-  var resourceLinkPath = `${reference}/${encodeURIComponent(id)}`;
+  var resourceLinkPath = `/${reference}/${encodeURIComponent(id)}`;
 
   if (linkType === 'show') {
     resourceLinkPath = `${resourceLinkPath}/show`;
@@ -108,8 +108,17 @@ ReferenceLinkField.propTypes = {
 };
 
 ReferenceLinkField.defaultProps = {
-  addLabel: true,
   linkType: 'show',
 };
 
-export default withStyles(styles)(ReferenceLinkField);
+const EnhancedLinkReferenceField = withStyles(styles)(ReferenceLinkField);
+
+EnhancedLinkReferenceField.defaultProps = {
+    addLabel: true,
+};
+
+EnhancedLinkReferenceField.displayName = 'EnhancedLinkReferenceField';
+
+export default EnhancedLinkReferenceField;
+
+// export default withStyles(styles)(ReferenceLinkField);

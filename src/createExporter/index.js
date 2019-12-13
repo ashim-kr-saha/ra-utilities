@@ -23,7 +23,11 @@ function makeHumanReadableKeys(records, fields) {
   var newFields = [];
   var i = 0;
   for (i = 0; i < fields.length; i++) {
-    var humanize = inflection.humanize(fields[i]);
+    var field = fields[i];
+    if(field.startsWith("_an__")) {
+      field = field.substr(5);
+    }
+    var humanize = inflection.humanize(field);
     fieldMap[fields[i]] = humanize;
     newFields.push(humanize);
   }

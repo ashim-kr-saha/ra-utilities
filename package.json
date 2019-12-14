@@ -1,6 +1,6 @@
 {
   "name": "ra-utilities",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Utility components for react-admin",
   "main": "lib/index",
   "directories": {

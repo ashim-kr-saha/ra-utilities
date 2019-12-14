@@ -73,8 +73,9 @@ export default (fields, options, name) => {
             var relativeData = data[i] !== undefined ? data[i][id] : undefined;
             for (var j = 0; j < relation.toFields.length; j++) {
               var toField = relation.toFields[j];
-              record[toField.to] =
-                relativeData !== undefined ? relativeData[toField.from] : '-';
+              if(!!relativeData) {
+                record[toField.to] = relativeData[toField.from];
+              }
             }
           }
           return record;

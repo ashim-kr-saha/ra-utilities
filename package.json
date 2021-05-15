@@ -43,7 +43,7 @@
     "prop-types": "^15.6.0",
     "react-admin": "^2.2.0",
     "@material-ui/icons": "^2.0.0",
-    "papaparse": "^4.6.3",
+    "papaparse": "^4.6.3 || ^5.0.0",
     "inflection": "^1.12.0"
   }
 }

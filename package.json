@@ -35,7 +35,7 @@
     "babel-preset-stage-0": "^6.24.1"
   },
   "peerDependencies": {
-    "ra-core": "^2.2.0",
+    "ra-core": "^2.2.0 || ^3.0.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",

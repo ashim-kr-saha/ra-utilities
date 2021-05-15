@@ -41,7 +41,7 @@
     "react-redux": "^5.0.7",
     "redux-form": "^7.4.2",
     "prop-types": "^15.6.0",
-    "react-admin": "^2.2.0",
+    "react-admin": "^2.2.0 || ^3.0.0",
     "@material-ui/icons": "^2.0.0",
     "papaparse": "^4.6.3",
     "inflection": "^1.12.0"
